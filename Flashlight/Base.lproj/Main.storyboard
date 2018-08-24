@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pnW-pP-O53">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,110 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Flashlight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hti-t6-Tb9">
+                                <rect key="frame" x="155.5" y="333.5" width="63" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="ON">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgm-Pq-HDp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXj-Yg-2AS">
+                                <rect key="frame" x="256" y="617" width="103" height="30"/>
+                                <state key="normal" title="Black Diamond"/>
+                                <connections>
+                                    <segue destination="l8T-5Z-SPN" kind="show" id="6fo-F1-wkT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fXj-Yg-2AS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="BFQ-Id-AsY"/>
+                            <constraint firstItem="Hti-t6-Tb9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IQI-DV-oG2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fXj-Yg-2AS" secondAttribute="trailing" constant="16" id="LHx-Bs-Oxa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fXj-Yg-2AS" secondAttribute="bottom" constant="20" id="Pv4-oc-dt2"/>
+                            <constraint firstItem="Hti-t6-Tb9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Vgi-aF-7h9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Mj0-2J-Uw4"/>
+                    <connections>
+                        <outlet property="powerButton" destination="Hti-t6-Tb9" id="KOR-A4-BwX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="903.20000000000005" y="133.5832083958021"/>
+        </scene>
+        <!--Advanced View Controller-->
+        <scene sceneID="XsU-BV-TyW">
+            <objects>
+                <viewController id="l8T-5Z-SPN" customClass="AdvancedViewController" customModule="Flashlight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ajk-3V-tSD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Up For On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qa-JD-mue">
+                                <rect key="frame" x="43.5" y="341.5" width="288" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="9qa-JD-mue" firstAttribute="centerX" secondItem="mMp-OJ-bjF" secondAttribute="centerX" id="HvB-cz-ymj"/>
+                            <constraint firstItem="9qa-JD-mue" firstAttribute="centerY" secondItem="mMp-OJ-bjF" secondAttribute="centerY" id="a6C-dn-QHu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mMp-OJ-bjF"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4wW-Su-3ts" appends="YES" id="nt9-6m-xQr"/>
+                            <outletCollection property="gestureRecognizers" destination="uoM-h1-rZa" appends="YES" id="9pR-fQ-O3p"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="instructionLabel" destination="9qa-JD-mue" id="01M-Pw-M9Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbx-x7-rzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="4wW-Su-3ts" userLabel="upOn">
+                    <connections>
+                        <action selector="swipeUp:" destination="l8T-5Z-SPN" id="YWy-U0-Sd2"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="uoM-h1-rZa" userLabel="downOff">
+                    <connections>
+                        <action selector="swipeDown:" destination="l8T-5Z-SPN" id="oER-cf-BAZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1684" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8yM-2Y-bjD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pnW-pP-O53" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zty-GD-Fiz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SZg-Jl-ssg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1M-Pt-eRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
